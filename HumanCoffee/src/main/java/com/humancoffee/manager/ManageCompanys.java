@@ -16,7 +16,6 @@ import com.humancoffee.dao.OraConnect;
 
 public class ManageCompanys {
 	public List<Company>[] companys = (List<Company>[]) new List[2];
-	public List<Company> lists;
 	public byte memory_pos = 0;
 	private int[] indexSearch = new int[2];
 	
@@ -36,16 +35,11 @@ public class ManageCompanys {
 			companys[0].clear();
 		if(companys[1] != null)
 			companys[1].clear();
-		
-		if(lists != null)
-			lists.clear();
 	}
 	
 	public ManageCompanys(){
 		companys[0] = new Vector<>();
 		companys[1] = new Vector<>();
-		
-		lists = new Vector<>();
 	}
 	
 
@@ -118,7 +112,6 @@ public class ManageCompanys {
 			
 			companys[mem_pos].add(company);
 		}
-		lists = companys[mem_pos];
 	}
 	
 	public void updateCompanyStatus(Company company) {

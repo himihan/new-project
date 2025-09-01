@@ -15,7 +15,6 @@ import com.humancoffee.dao.OraConnect;
 
 public class ManageComCis {
 	public List<Com_Ci>[] com_cis = (List<Com_Ci>[]) new List[2];
-	public List<Com_Ci> lists;
 	public byte memory_pos = 0;
 	private int[] indexSearch = new int[2];
 	
@@ -35,16 +34,11 @@ public class ManageComCis {
 			com_cis[0].clear();
 		if(com_cis[1] != null)
 			com_cis[1].clear();
-		
-		if(lists != null)
-			lists.clear();
 	}
 	
 	public ManageComCis(){
 		com_cis[0] = new Vector<>();
 		com_cis[1] = new Vector<>();
-		
-		lists = new Vector<>();
 	}
 	
 	public void readComCi(byte mem_pos) {
@@ -108,7 +102,6 @@ public class ManageComCis {
 			
 			com_cis[mem_pos].add(com_ci);
 		}
-		lists = com_cis[mem_pos];
 	}
 	
 	public void updateComCiStatus(Com_Ci com_ci) {
